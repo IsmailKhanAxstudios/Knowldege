@@ -1,0 +1,608 @@
+npm init 
+npm i -D parcel
+npm i react
+npm i react-dom
+type = "module" index.html 
+package.json - scripts - start:parcel index.html" build:"parcel build index.html"
+ReadMe 
+gitignore
+
+
+
+Topics 
+Folder Structure -App.js index.html index.css src -> components utils
+Parcel babel - html
+parcel - npm 
+cross browser site - attack
+transitive dependency
+Jsx 
+React element 
+config driven ui
+babel - browser dont understand jsx - convert - transpiled
+Reconciliation diff algo - virtual DOM - 
+types of imports 
+types of componentas
+how react is fast - faster effeicint dom manuplation 
+not because of virtual DOM but new algo React Fiber that finds out 
+diffrence between two Virtual DOMS  and updates the DOM only portion that has changed 
+monolith arch - eveything in same project 
+microservice - 
+   DIffrent services small services forms big app - seperation of concern - single responsiblity
+   all Services are deployed on same url
+   call to diffrent urls or ports - api etc
+
+CORS Policy - Our browser blocking from one origin DOMAIN to another DOMAIN 
+CORSPXOY WEBSITE
+- Origin Mismatch 
+Bypass Cors - Cors extension 
+Shimmer UI - Show fake page until we load data 
+Hooks 
+Props
+Destructure 
+Whenever state variable updates react triggers Reconciliation cycle rerender component 
+Virtual DOM - Obj representation of actual DOM 
+
+innerHeight -500
+scroll Height 100
+
+end of page reach 
+- maintain one flag - fetch api set flag to false again 
+again repeat same
+
+Routes - createbrowser router , routerprovoder ,useRouteError.Outlets
+Outlet used in parent route where children rout and children component are placed
+rafce
+children routing
+GraphQL
+Params
+
+SPA 
+
+Types of routing - client side and server side 
+server side - refresh whole page traditional 
+client side - not reload - component interchange 
+
+Create Routes and Children 
+
+dynamic routing 
+GraphQL - Load data which is required from 
+
+5 - 6 Initiation Process CHATGPT 
+
+Class Based Component 
+-Parent with componentDidMount -> Child with ComponentDidMount 
+-Parent with componentDidMount -> 2Child with ComponentDidMount 
+
+React Life Cycle Diagram
+
+Constructor
+render 
+didmount
+ComponentDidUpdate
+
+debugger;
+
+ComponentDidMount 
+ComponentDidUpdate 
+ComponentwillUnMount - When removed from UI - Changing Page
+
+useEffect return playes role of Cleanup Function
+
+Optimisations - Performance 
+Single Responbility Principle -> If Func , Class ->Single Responsiblity
+Custom Hook -> Modular - utility functions
+Modular - Break down things -> reusable , maintainable , testable 
+Keep Component as light as possible
+
+example in ResaturantMenu -> Fetchcing and displaying data 
+it should be just responsible for displaying data
+
+Custom Hook to fetch the data
+-User is active or offline internet is available or not 
+
+When user internet not working -> Show please check internet connection
+
+Custom Hooks 
+Input - Output 
+usage of dev console 
+
+Performance
+
+Parcel - bundles all to one js file
+large component in one js size of js will increase alot 
+How to make it smaller js file ->
+
+Smaller bundles of file instead of all in one file or all diffently 
+this is known as chunking 
+code splitting 
+dynamic bundling 
+lazy loading 
+dynamic import
+Lazy Loading 
+On Demand Loading 
+
+How to make small bundles
+When to make small bundles
+
+Bundles should have enough logic for major features ie just for flight , hotels
+if we make all logic one bundler heavy task 
+
+Assume Swiggy is selling food + Groceriers
+food delivery -10components
+grocery -10 consider small app very big components
+Seprate Bundlers  
+
+normally both are in one bundler 
+Logically distribute -> grocery should come from seperate bundler
+
+Whereever importing Grocery -> Import using Lazy Loading
+When initially app loads for food it will not load for grocery it willonly load when grocery 
+link is clicked. Not loading everything when required 
+
+
+Lazy from React ->grocery = lazy(arrow func -> import(path of component) func)
+
+Error suspended while responsing to sync input 
+took 12ms to load in browser code was not there because react is very fast 
+code was not present so threw Error
+
+Suspense keyword
+Render grocery and not there we use suspend 
+component from react lib 
+
+Wrap the Grocery with Suspend Component fallback Loading 
+
+render when code not available 
+
+-TailWind 
+ SCSS AND SASS 
+ SASS 
+  Same CSS with super powers
+ -Styled Components
+ -Material UI - react framework 
+ -Chakra 
+ -Bootstrap   
+   
+ Tailwind
+ Tailwind config
+ Tailwind extension install it.
+ usage of className 
+ Tailwind css
+ internal style aso give
+ custom classes also we can add 
+ dynamic classes w-[200px]
+
+
+
+
+-Higher Order Component 
+  Func that takes component and returns a component 
+  Takes component add some enhancements and returns back 
+
+  Feature - Promoted 
+  Why to use?
+  Because Higher Order Component are pure func 
+ 
+  We will not modify directly the restaurant Card 
+  Pure func - 
+-Pure Function 
+ That takes same input returns same output 
+ no extranl change 
+ example a, b input return <h1>ab< 
+
+Impure func example 
+func has external variable change count ++
+
+-Controlled and Uncontrolled Components 
+ UI Layer + Data Layer -> react 
+ Ui Layer powered by Data Layer 
+ Data Layer -> States , props, js codes 
+ Ui layer - JSX 
+
+-Filter func and building accordin 
+
+
+-React Dev Tool
+ 
+
+-Lift State up
+
+-Controlled Un controlled component 
+Controlled Component - Parent is controlling (Dont have   states)
+UnControlled Component - Own state
+
+Enabling one component at time 
+
+Index set Or Direct set 
+
+
+-Prop Drilling 
+
+-React Context 
+- Creating user Context 
+import { createContext } from "react";
+
+const userContext = createContext({
+  loginUser: "Default User",
+});
+export default userContext;
+
+- Using useContext(userContext)
+import { useContext } from "react";
+import userContext from "../../utils/userContext";
+  const {loginUser} = useContext(userContext)
+
+-Wrapping with context.provider in place where we want to use 
+<UserContext.provider value = {{loggedInUser:"UpdatedValue",setValue}} >
+-using context.consumer for using in class component 
+<userContext.consumer > {({loggedInuser})=>{
+<h1>{loggedInUser}<h1>
+}}<User>
+-How to modify from anywhere -> pass the setting func in context and use it anywhere 
+
+
+Avoid Prop Delay 
+
+
+-Redux 
+ Not Mandatory 
+ Redux is not part of react 
+
+ zustand another library 
+
+ Build Cart Page 
+ Add Something it goes into Cart 
+
+In Traditional Redux we need action types action creators inside reducers also 
+but in redux toolkit we use directly inside reducers 
+
+Store can have multiple slices each slice can have multiple reducers and to combone all slice
+we use reducer object 
+
+
+-RTK Arch 
+
+Redux Store has all Data -> Centralised 
+We use provider to make it access to redux stores 
+
+-Slices 
+Parts of Redux Store Multiple Slices 
+user slice , cart slice , 
+
+Updating
+Add Data-> Dispatchaction -> calls func (Reducer) -> modify slices / cart
+
+Read Data 
+Selector 
+Subscribed to Store to read data (Sync with store) USING SELECTOR 
+
+
+-Installation provider and usage Reducers
+
+Install 
+Create store
+import cartReducer from cartSlice
+const appStore  = configureStore({
+  reducer:{
+   cart:cartReducer,
+
+  }
+})
+
+Connect Store - provider
+
+create slice  
+
+const cartSlice = createSlice({
+  name:"cart",
+  initialState:{
+    items:[]
+  }
+  reducers:{
+    actionnName:(state,action) =>{
+      state.items.push(action.payload)  //MUTATING STATE WHICH IS NOT GOOD AS REDUX CANNOT TRACK SO ITS NOT GOOD 
+      TO MUTATE DIRECTLY IN TRADITION AND USE ...state,items:updated value , BUT IN REDUX TOOLKIT 
+      WE CAN WRITE MUTATE DIRECTLY AND UNDER THE HOOD IT USES IMMER TO CORRECT IT
+
+      Earlier 
+      const newState = [...state];
+      newState.push(action.payload)
+      return newState
+    }
+  }
+})
+
+Now IN RTK 
+Mutate State or Return New State like this return {items:[]}
+
+export const {addItem,removeItem,clearCart} = cartSlice.actions 
+export default cartSlice.reducer;
+
+because 
+cartSlice becomes object -> which has action and reducers 
+
+dispatch action 
+const dispatch = useDispatch();
+dispatch(additem("PAYLOAD")) -> ACTION.PAYLOAD passed as second argument 
+
+selector 
+const cart = useSelector((store) => store.cart.items) // what portion of store to access 
+
+[INSIDE UTILS FOLDER OR INSIDE SRC STORE FOLDER]
+-UseDispatch and dispatch() 
+
+-Interview Questions
+Onclick = {handleClick}  called on Click without any arguments
+onClick = {handleClick()} //called directly without waiting for click
+onClick = {()=>handleClick()} //called on click
+
+SUBSCIRBE TO RIGHT PORTION OF STORE OTHERWISE PERFORMANCE ISSUES 
+Anything changes if we provide entire store is rendered  
+
+
+Mutating State -> Redux behind scene -> Imuating state behind scens 
+redux uses immerjs to do this orignal state new state and gives immutable state 
+
+we cant do state = [] we are not mutating it we have to mutate state 
+in toolkit  or we can return empty Object []
+
+
+REDUX DEVTOOL
+
+REDUX IN CLASS BASED 
+REDUX IN API FETCHING - RTK Query - 
+Old way Middleware thunk 
+Now React Toolkit - RTK Query 
+CREATING CART APP 
+ZUSTAND 
+
+current(state) -> just to see but doesnt change the orignal state as it just creates a sshallow copy of the orfignal staet 
+
+Class Based 
+MapStateToProps = (state) =>({
+  item:state.cart.item
+})
+mapDispatchToProps = {
+  addItem,
+  removeItem
+}
+export default connect(mapstate,diospatch)(aBOUT)
+
+- Fetching Using Thunk and Middle Ware  
+
+Redux Thunk is tradional way we manually have to set actions 
+Create Async thunk - RTK it is automatically managed by Extra reducers inn creatseSlices
+
+- Fetching using RTK  Toolkit 
+
+- Portals 
+- Overlays 
+
+-Testing 
+Manual Testing 
+If i add newfeature will i again check every other feature 
+
+Write Code to Test aplication 
+-Types of Testing 
+ Unit Testing - test components indivisually 
+ Integrated Testing - all at together
+ End to End Testing E2E - Simulating what user do in user 
+ e2e - selinum etc testers do 
+
+React test library - to write test cases in React 
+Built on DOM Testing Library - Uses Jest behind scenes 
+
+Install react test library -> comes with npm create
+install jest  npm i -D jest 
+
+
+-Jest
+uses babel we have to install other dependencies 
+-Configure Babel 
+parcel internally uses babel and has own config which can collide with 
+this config so we have to update parcel 
+
+parcel-doc - jest - js - babel  
+We want our babel work and disable parcel config 
+
+create .parcelrc file and copy paste items from parcel doc
+https://parceljs.org/languages/javascript/#babel
+
+
+- Install React test library 
+- Install Jest 
+- Install Babel an file 
+- Disable parcels own babel 
+- npm run test
+-Jest configuration file for jest
+npx  jest --init
+-JS DOM Library needs to be installed
+npm i -D jest-environment-jsdom 
+
+-Syntax of test func 
+- Create Folder __tests__ anywhere it will start executing that as test file 
+inside folder .test.js extension 
+- Or create any other file with name .test.js or .test.ts or spec.ts 
+-Jest
+
+npm install --save-dev jest-environment-jsdom
+
+ERROR -> WE NEED TO ADD npm i -D @babel /preset-react // to make jsx work 
+now we will have to add it to babel config 
+another array 
+["@babel/preset-react",{runtime:"automatic"}]
+dunder -> __name__ underscores in front and end 
+
+Another error -> not a func we need to install another library 
+npm i -D @testing-library/jest-dom 
+
+Component if us redux error -> Understands react but not redux 
+
+Provide redux store to header in isolation
+Wrap with store provoder 
+
+Another error-> Link Component is not react -> react router DOM 
+Provide BrowserRouter Wrap it
+syntax 
+create sum function 
+
+
+test("description",()=>{
+   const result = sum(3,4)
+
+   //check if result is correct or not 
+
+//assertion 
+   expect(result).toBe(7)
+})
+
+npm run test 
+
+TEST CASES IN REACT 
+- Contact Page 
+
+
+
+-Unit Testing 
+TO CHECK RENDERED OR NOT 
+
+
+Contact.test.js 
+import render from testing library 
+import screen 
+import "@testing-library/jest-dom" ;
+
+test("Should Load Contact Us Component",()=>{
+  render(<Contact/>)
+ const heading =  screen.getByRole("heading") /// gievs all heading 
+
+ expect(heading).toBeInDocument();
+})
+
+Now write for button Button 
+
+
+ERROR -> WE NEED TO ADD npm i -D @babel /preset-react // to make jsx work 
+includ it in babel config 
+
+.getByText("Submit")
+
+image - getByAltValue 
+getByPlaceHolder 
+many other items 
+
+If there are more then one input 
+screen.getAllByRole 
+use getByRole for one or else eror
+
+ expect(getAllByRole("textbox").length).toBe(2);
+
+ 
+ expect(getAllByRole("textbox").length).not.toBe(2);
+
+ If we have many testcase in one file we can group testcases 
+
+describe("Contact Us Text Cases",()=>{
+  all test cases here 
+})
+we can have multiple desrcibes and describe and nested describe 
+
+test() also be written as it()
+
+Header Component Test Case 
+Check if it is loaded with login Button or not 
+Check if Cart has 0 Items or not 
+
+Provide store to Header in isolation 
+BrowserRouter for routing
+<BrowserRouter>
+
+<Provider store = {appStore}>
+<Provider>
+<BrowserRouter/>
+
+<Button>Login<Button  getByRole("button") or getByText("login")
+if there are multiple button then getByRole("button",{name:"login"})
+
+We can use Regex we dont have to write exact string 
+getBytext(/cart/
+)
+
+Simulate CLick event 
+loginButton = getByText("button",{name login})
+fireEvent.click(loginButton)
+
+logoutButton = getByRole("button",{logout})
+
+Testing Props 
+create resCardMock.json -> Add junk data 
+
+<RestaurantCard  resData = {MOCK_DATA}/>
+expect getBytext("Haldiram burger).tobeindoc
+Mock Data Create
+
+
+-Integrated Testing 
+
+Search -> It should filter 
+other components change -> integrated 
+
+Search.test.js 
+Fetch is not present as it is Browser like dom but donthave all 
+mock function 
+global.fetch = jest.fn(()=>{
+  return Promise.resolve({
+    json:()=>{
+      return Promise.resolve(MOCK DATA FROM BROWSER)
+    }
+  })
+})
+
+dont need browser 
+
+CREATE WATCH TEST IN PACKAGE JSON TO AUTOMATIC RUN testcase
+"watch-test":"jest --watch"
+
+npm run watch-test runs and stops 
+
+Whenever there is state update or fetch wrap render method to act function
+async () => await act(asyc () => render(bROWSERROUTE<Body>))
+//intitially total cards
+expect(screen.getAllbytestid.length).toBe(20)
+const searcrhBtn = screem.getByRole("button",{name:"search})
+const input = screen.getbYTestId() 
+
+
+fireEvent.change(input {target:"burger"})
+fireEvent.click(search);
+card = scren.getAllBytESTID("rescard")
+expect(cards.length).toBe(4)
+
+
+ad  data-testid in INPUT 
+
+
+Top rated Restaurants
+Suppose we want to do soemthing before every test 
+
+func -> beforeAll(()=>{
+  runs before all test 
+})
+func -BeforeEach // in describe we hav emultiple test case before each 
+
+AfterAlll
+AfterEach
+
+Add to Cart 
+
+coverage Folder we can see index.html has all test items what covered wat not 
+80> good practise
+
+REFER GITHUB FOR CASES
+-Netflix GPT 
+
+-Youtube
+
+
+
+- REDUX THUNK OLD WAY 
