@@ -1,60 +1,81 @@
+Initial Steps For Creation 
 npm init 
 npm i -D parcel
 npm i react
 npm i react-dom
+npx parcel build - Production Ready app minify and all 
+npx pacel index.html - execute parcel codes 
+package.json - package.json.lock
+Bundler 
+Package Manager 
+Custom Script of own in start
 type = "module" index.html 
 package.json - scripts - start:parcel index.html" build:"parcel build index.html"
 ReadMe 
 gitignore
 
+Folder Structure index.js index.css src - components , utils , store,app.js
+
+Parcel babel - transpilees  html  given by parcel   
+JSX Transpiled -> React Element -> Js Object -> HTML 
+Advantage of using JSX - Sanitise data cross site scripting - api it can read cookie local storage it prevents this 
+                       - Make code readable 
+                       - Usedul error warnings 
+                       - Prevents Code Injection attacks 
+Before Creating Project - Build structure and what will come where 
 
 
-Topics 
-Folder Structure -App.js index.html index.css src -> components utils
-Parcel babel - html
 parcel - npm 
 cross browser site - attack
-transitive dependency
-Jsx 
-React element 
-config driven ui
-babel - browser dont understand jsx - convert - transpiled
-Reconciliation diff algo - virtual DOM - 
+transitive dependency - dependeny we use are dependent on other dependency 
+BrowsersList in package json -> which versions project should run 
+Tree Shaking  - Optimisations
+
+
+
+Initial React we use - createElement() - Very Bad 
+
+JSX - HTML LIke syntax but not HTML 
+Jsx to convert to browser readable babel transpiler is used 
+
+config driven ui - Data driven UI - UI runs based on data 
+
+React -> DOM Manuplations are expensive react perfoems faster DOM manuplation with help of differ algo 
+
+React Hooks 
+ Hooks are super powerful variable that syncs data layer with ui layer 
+
 types of imports 
-types of componentas
-how react is fast - faster effeicint dom manuplation 
-not because of virtual DOM but new algo React Fiber that finds out 
-diffrence between two Virtual DOMS  and updates the DOM only portion that has changed 
-monolith arch - eveything in same project 
+
 microservice - 
    DIffrent services small services forms big app - seperation of concern - single responsiblity
    all Services are deployed on same url
    call to diffrent urls or ports - api etc
+monolith arch - eveything in same project 
 
-CORS Policy - Our browser blocking from one origin DOMAIN to another DOMAIN 
-CORSPXOY WEBSITE
-- Origin Mismatch 
-Bypass Cors - Cors extension 
-Shimmer UI - Show fake page until we load data 
-Hooks 
-Props
-Destructure 
+Reconciliation diff algo - virtual DOM - React Fiber 
+how react is fast - faster effeicint dom manuplation 
+not because of virtual DOM but new algo React Fiber that finds out 
+diffrence between two Virtual DOMS  and updates the DOM only portion that has changed 
 Whenever state variable updates react triggers Reconciliation cycle rerender component 
 Virtual DOM - Obj representation of actual DOM 
+
+
+
+CORS Policy - Our browser blocking from one origin DOMAIN to another DOMAIN 
+CORSPXOY WEBSITE Origin Mismatch  Bypass Cors - Cors extension
+
+Shimmer UI - Show fake page until we load data 
+Hooks  , Props , Destructure 
 
 innerHeight -500
 scroll Height 100
 
-end of page reach 
-- maintain one flag - fetch api set flag to false again 
-again repeat same
-
-Routes - createbrowser router , routerprovoder ,useRouteError.Outlets
+***Routes***
+createbrowser router , routerprovoder ,useRouteError.Outlets
 Outlet used in parent route where children rout and children component are placed
 rafce
-children routing
-GraphQL
-Params
+children routing ,GraphQL , useParams
 
 SPA 
 
@@ -67,13 +88,12 @@ Create Routes and Children
 dynamic routing 
 GraphQL - Load data which is required from 
 
-5 - 6 Initiation Process CHATGPT 
 
 Class Based Component 
 -Parent with componentDidMount -> Child with ComponentDidMount 
 -Parent with componentDidMount -> 2Child with ComponentDidMount 
 
-React Life Cycle Diagram
+React Life Cycle Diagram working 
 
 Constructor
 render 
@@ -88,6 +108,11 @@ ComponentwillUnMount - When removed from UI - Changing Page
 
 useEffect return playes role of Cleanup Function
 
+useEffect
+ no empty dependency - runs after every render
+ empty dependency - runs  once after entire first render
+
+WHY  TO USE CUSTOM HOOKS
 Optimisations - Performance 
 Single Responbility Principle -> If Func , Class ->Single Responsiblity
 Custom Hook -> Modular - utility functions
@@ -102,24 +127,19 @@ Custom Hook to fetch the data
 
 When user internet not working -> Show please check internet connection
 
+API HAS TWO ASPECTS FETCH THEN RENDER OR RENDER FETCH RENDER 
+
 Custom Hooks 
 Input - Output 
 usage of dev console 
 
 Performance
-
 Parcel - bundles all to one js file
 large component in one js size of js will increase alot 
 How to make it smaller js file ->
 
 Smaller bundles of file instead of all in one file or all diffently 
-this is known as chunking 
-code splitting 
-dynamic bundling 
-lazy loading 
-dynamic import
-Lazy Loading 
-On Demand Loading 
+this is known as chunking ,code splitting ,dynamic bundling ,lazy loading ,dynamic import ,Lazy Loading  , On Demand Loading 
 
 How to make small bundles
 When to make small bundles
@@ -134,12 +154,9 @@ Seprate Bundlers
 
 normally both are in one bundler 
 Logically distribute -> grocery should come from seperate bundler
-
 Whereever importing Grocery -> Import using Lazy Loading
 When initially app loads for food it will not load for grocery it willonly load when grocery 
 link is clicked. Not loading everything when required 
-
-
 Lazy from React ->grocery = lazy(arrow func -> import(path of component) func)
 
 Error suspended while responsing to sync input 
@@ -173,8 +190,6 @@ render when code not available
  dynamic classes w-[200px]
 
 
-
-
 -Higher Order Component 
   Func that takes component and returns a component 
   Takes component add some enhancements and returns back 
@@ -200,11 +215,7 @@ func has external variable change count ++
  Ui layer - JSX 
 
 -Filter func and building accordin 
-
-
 -React Dev Tool
- 
-
 -Lift State up
 
 -Controlled Un controlled component 
@@ -215,6 +226,7 @@ Enabling one component at time
 
 Index set Or Direct set 
 
+Never use index in key map bad practise not recomended 
 
 -Prop Drilling 
 
