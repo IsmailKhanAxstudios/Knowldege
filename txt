@@ -53,6 +53,8 @@ microservice -
    call to diffrent urls or ports - api etc
 monolith arch - eveything in same project 
 
+So basically the actual dom has virtual dom and whenever changes happens the new vortual dom is created with updated changes and then this changes are compared with previous virtual dpm and whateever changes are updated those are updated in actual dom then again a copy of actual dom which is virtual dom is created
+
 Reconciliation diff algo - virtual DOM - React Fiber 
 how react is fast - faster effeicint dom manuplation 
 not because of virtual DOM but new algo React Fiber that finds out 
