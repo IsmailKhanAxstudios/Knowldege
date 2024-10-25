@@ -51,6 +51,17 @@
 - Same Action diffrent Data
 
 # Features
+KEEP ALL SECRET IN .ENV FILE AND USE WITH REACT_APP  
+- ALSO ADD IT IN GITIGNORE FILE
+----memoisation ------
+MULTIPLE API CALLS EVEN IF DATA IS PRESENT AND COMPONENT LOADS AGAIN 
+if store already has movies why to fetch again -> memoisation  
+check if movies are there in store if its there then dont fetch api 
+IN USE EFFECT -> IF(!NowPlayingMovies) then make API CALL or && 
+
+
+THIS SAVES LOTS OF API CALLS 
+
 
 1. **Authentication** - Secure protected routes for authenticated users.
 2. **Form Handling** - Efficient and user-friendly form management.
@@ -67,4 +78,4 @@
   - Search Bar
   - Movie Suggestions
 
-App - Body -
+App - Body - 
