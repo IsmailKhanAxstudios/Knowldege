@@ -370,6 +370,8 @@ Now React Toolkit - RTK Query
 CREATING CART APP 
 ZUSTAND 
 
+
+
 current(state) -> just to see but doesnt change the orignal state as it just creates a sshallow copy of the orfignal staet 
 
 Class Based 
@@ -387,7 +389,22 @@ export default connect(mapstate,diospatch)(aBOUT)
 Redux Thunk is tradional way we manually have to set actions 
 Create Async thunk - RTK it is automatically managed by Extra reducers inn creatseSlices
 
-- Fetching using RTK  Toolkit 
+- Fetching using RTK  Toolkit -------------------------------
+------------------------------------------------------------
+-----------------------------=--------
+In traditional Redux, we typically define action types, 
+action creators, and a reducer using a switch statement 
+to handle synchronous operations easily. However, when dealing with 
+asynchronous operations, we need to manually dispatch different actions 
+(such as loading, success, and error) from action creators. 
+To simplify this process, we use Redux Thunk, which allows us to create thunks—action creators 
+that return an asynchronous function. This function can dispatch all the necessary actions 
+(like loading, success, and error) at once. The reducer listens to these actions using the 
+switch case and updates the state accordingly.
+
+In modern Redux Toolkit (RTK), without needing Redux Thunk, we define action creators on the left side and reducer functions on the right side within createSlice. Actions are dispatched as usual, but for asynchronous tasks, we still need to manually dispatch actions like loading, success, or error. To make this easier, RTK introduces createAsyncThunk, a special action creator designed for async operations. Additionally, extraReducers are used to directly manage state based on the current async operation status: pending, fulfilled, or rejected.
+
+
 
 - Portals 
 - Overlays 
